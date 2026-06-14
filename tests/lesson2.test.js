@@ -17,8 +17,8 @@ describe('Урок 2 - Умови, цикли, функції, масиви', ()
   });
 
   test('Задача 3: складна логічна умова', () => {
-    expect(task3Answer).not.toBeNull();
-    expect(String(task3Answer)).toBe('000');
+    expect(String(task3Answer)).not.toBe('000');
+    expect(task3Answer).toBeNull();
   });
 
   test('Задача 4: divide - базовий поділ', () => {
