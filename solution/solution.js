@@ -4,15 +4,14 @@
 
 // Задача №1
 // Що потрапить в консоль?
-//   let someVar = 0;
-//   ++someVar;
-//   if (someVar) { 
-//      console.log(someVar); 
-//   }
+let someVar = 0;
+++someVar;
+if (someVar) {
+  console.log(someVar);
+}
 // Запишіть результат як число або null (якщо нічого не виведеться)
 
-const task1Answer = null; // <- ваша відповідь
-
+const task1Answer = 1; // <- ваша відповідь
 
 // Задача №2
 // За допомогою циклу FOR виведіть рядки: "Пункт №1", "Пункт №2", ... "Пункт №10"
@@ -20,31 +19,37 @@ const task1Answer = null; // <- ваша відповідь
 
 function task2() {
   const result = [];
-  // ваш код тут
-
+  for (let i = 1; i <= 10; i++) {
+    result.push(`Пункт №${i}`);
+  }
   return result;
 }
-
+task2();
 
 // Задача №3
 // Що потрапить в консоль?
-//   if (2 * 20 <= 10 || 30 / 2 < 5 && 10 <= "10" || 20 === "20") {
-//     console.log('000');
-//   }
+if (2 * 20 <= 10 || (30 / 2 < 5 && 10 <= "10") || 20 === "20") {
+  console.log("000");
+}
 // Запишіть результат як рядок або null (якщо нічого не виведеться)
 
 const task3Answer = null; // <- ваша відповідь
-
 
 // Задача №4
 // Функція ділення. Не має повертати NaN, Infinity або кидати помилку.
 // Повертає рядок виду: "Результат ділення: 5"
 
 function divide(a, b) {
-  // ваш код тут
+  if (typeof a !== "number" && typeof b !== "number") {
+    return "Некоректні дані";
+  }
+  if (b === 0) {
+    return "Некоректні дані";
+  }
+  let calcDivide = a / b;
+  return `Результат ділення: ${calcDivide}`;
 }
-
-
+divide(100, 20);
 // Задача №5
 // Створіть масив із 5 елементів.
 // За допомогою методу перебору перевірте,
@@ -52,11 +57,10 @@ function divide(a, b) {
 // Поверніть true, якщо число знайдено, інакше false.
 
 function task5() {
-  const arr = []; // <- ваш масив (має містити число 10)
-
+  const arr = [5, 2, 10, NaN, "js"]; // <- ваш масив (має містити число 10)
+  return arr.includes(10);
   // ваш код перебору тут
   // повертає true якщо знайдено 10, інакше false
 }
-
 
 module.exports = { task1Answer, task2, task3Answer, divide, task5 };
